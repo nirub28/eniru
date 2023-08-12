@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ProductsList from './ProductsList'; 
 import {Route, Routes , Link} from 'react-router-dom';
 import styles from '../styles/home.module.css';
@@ -9,16 +9,26 @@ const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const images = [
-    'url_for_image1',
-    'url_for_image2',
-    'url_for_image3',
-    // Add more image URLs here
+    'https://static.vecteezy.com/system/resources/previews/007/145/847/non_2x/ecommerce-word-concepts-banner-online-shopping-retail-digital-purchase-payment-trading-presentation-website-isolated-lettering-typography-idea-with-linear-icons-outline-illustration-vector.jpg',
+    'https://static.vecteezy.com/system/resources/previews/001/937/856/non_2x/paper-art-shopping-online-on-smartphone-sale-promotion-backgroud-banner-for-market-ecommerce-free-vector.jpg',
+    'https://img.freepik.com/free-vector/ecommerce-web-page-concept-illustration_114360-8204.jpg?w=2000',
   ];
 
   // Function to handle category selection
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);
   };
+
+  useEffect(() => {
+    // Rotate images every 3 seconds
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000);
+
+    // Clean up the timer when the component unmounts
+    return () => clearInterval(timer);
+  }, [images.length]);
+
 
   const CategoryItem = ({ to, category, imageClass }) => (
     <Link to={to} onClick={() => handleCategorySelect(category)}>
@@ -29,11 +39,25 @@ const Home = () => {
     </Link>
   );
 
+  const imgdivinStyle = {
+    width: '100%',
+    height: '100%',
+    backgroundImage: `url(${images[currentImageIndex]})`,
+    backgroundSize: 'contain',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+  };
+
   return (
 
 
     <div className="Home">
-      <h2>Categories</h2>
+
+        <div className={styles.imgdiv}>
+        <div className={styles.imgdivin} style={imgdivinStyle}></div>
+        </div>
+
+      <h2>&nbsp;&nbsp;&nbsp;&nbsp;Categories:</h2>
       <div className={styles.divCat}>
 
       <CategoryItem to="/products/watch" category="Watches" imageClass="watch" />

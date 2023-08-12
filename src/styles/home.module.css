@@ -94,3 +94,11 @@
 .lighting {
   background-image: url('https://img.staticmb.com/mbcontent/images/uploads/2022/11/Vertical-Hanging-Bamboo-Lights.png');
 }
+
+.imgdiv{
+  height:300px;
+  width: 100%;
+  overflow: hidden;
+}
+
+
