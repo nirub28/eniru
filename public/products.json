@@ -1118,7 +1118,7 @@
       "rating": 4.63,
       "stock": 91,
       "brand": "Naviforce",
-      "category": "mens-watches",
+      "category": "watch",
       "thumbnail": "https://i.dummyjson.com/data/products/61/thumbnail.jpg",
       "images": [
         "https://i.dummyjson.com/data/products/61/1.jpg",
@@ -1135,7 +1135,7 @@
       "rating": 4.05,
       "stock": 95,
       "brand": "SKMEI 9117",
-      "category": "mens-watches",
+      "category": "watch",
       "thumbnail": "https://i.dummyjson.com/data/products/62/thumbnail.jpg",
       "images": [
         "https://i.dummyjson.com/data/products/62/1.jpg",
@@ -1151,7 +1151,7 @@
       "rating": 4.89,
       "stock": 142,
       "brand": "SKMEI 9117",
-      "category": "mens-watches",
+      "category": "watch",
       "thumbnail": "https://i.dummyjson.com/data/products/63/thumbnail.webp",
       "images": [
         "https://i.dummyjson.com/data/products/63/1.jpg",
@@ -1169,7 +1169,7 @@
       "rating": 4.98,
       "stock": 61,
       "brand": "Strap Skeleton",
-      "category": "mens-watches",
+      "category": "watch",
       "thumbnail": "https://i.dummyjson.com/data/products/64/thumbnail.jpg",
       "images": [
         "https://i.dummyjson.com/data/products/64/1.jpg",
@@ -1187,7 +1187,7 @@
       "rating": 4.79,
       "stock": 94,
       "brand": "Stainless",
-      "category": "mens-watches",
+      "category": "watch",
       "thumbnail": "https://i.dummyjson.com/data/products/65/thumbnail.webp",
       "images": [
         "https://i.dummyjson.com/data/products/65/1.jpg",
@@ -1206,7 +1206,7 @@
       "rating": 4.79,
       "stock": 24,
       "brand": "Eastern Watches",
-      "category": "womens-watches",
+      "category": "watch",
       "thumbnail": "https://i.dummyjson.com/data/products/66/thumbnail.jpg",
       "images": [
         "https://i.dummyjson.com/data/products/66/1.jpg",
@@ -1225,7 +1225,7 @@
       "rating": 4.03,
       "stock": 46,
       "brand": "Eastern Watches",
-      "category": "womens-watches",
+      "category": "watch",
       "thumbnail": "https://i.dummyjson.com/data/products/67/thumbnail.jpg",
       "images": [
         "https://i.dummyjson.com/data/products/67/1.jpg",
@@ -1244,7 +1244,7 @@
       "rating": 4.55,
       "stock": 77,
       "brand": "Luxury Digital",
-      "category": "womens-watches",
+      "category": "watch",
       "thumbnail": "https://i.dummyjson.com/data/products/68/thumbnail.webp",
       "images": [
         "https://i.dummyjson.com/data/products/68/1.jpg",
@@ -1260,7 +1260,7 @@
       "rating": 4.77,
       "stock": 89,
       "brand": "Watch Pearls",
-      "category": "womens-watches",
+      "category": "watch",
       "thumbnail": "https://i.dummyjson.com/data/products/69/thumbnail.jpg",
       "images": [
         "https://i.dummyjson.com/data/products/69/1.jpg",
@@ -1279,7 +1279,7 @@
       "rating": 4.08,
       "stock": 111,
       "brand": "Bracelet",
-      "category": "womens-watches",
+      "category": "watch",
       "thumbnail": "https://i.dummyjson.com/data/products/70/thumbnail.jpg",
       "images": [
         "https://i.dummyjson.com/data/products/70/1.jpg",
@@ -1296,7 +1296,7 @@
       "rating": 4.71,
       "stock": 17,
       "brand": "LouisWill",
-      "category": "womens-bags",
+      "category": "bags",
       "thumbnail": "https://i.dummyjson.com/data/products/71/thumbnail.jpg",
       "images": [
         "https://i.dummyjson.com/data/products/71/1.jpg",
@@ -1314,7 +1314,7 @@
       "rating": 4.91,
       "stock": 27,
       "brand": "LouisWill",
-      "category": "womens-bags",
+      "category": "bags",
       "thumbnail": "https://i.dummyjson.com/data/products/72/thumbnail.webp",
       "images": [
         "https://i.dummyjson.com/data/products/72/1.jpg",
@@ -1333,7 +1333,7 @@
       "rating": 4.18,
       "stock": 101,
       "brand": "Bracelet",
-      "category": "womens-bags",
+      "category": "bags",
       "thumbnail": "https://i.dummyjson.com/data/products/73/thumbnail.jpg",
       "images": [
         "https://i.dummyjson.com/data/products/73/1.jpg",
@@ -1351,7 +1351,7 @@
       "rating": 4.01,
       "stock": 43,
       "brand": "Copenhagen Luxe",
-      "category": "womens-bags",
+      "category": "bags",
       "thumbnail": "https://i.dummyjson.com/data/products/74/thumbnail.jpg",
       "images": [
         "https://i.dummyjson.com/data/products/74/1.jpg",
@@ -1370,7 +1370,7 @@
       "rating": 4.93,
       "stock": 13,
       "brand": "Steal Frame",
-      "category": "womens-bags",
+      "category": "bags",
       "thumbnail": "https://i.dummyjson.com/data/products/75/thumbnail.jpg",
       "images": [
         "https://i.dummyjson.com/data/products/75/1.jpg",
@@ -1388,7 +1388,7 @@
       "rating": 4.61,
       "stock": 51,
       "brand": "Darojay",
-      "category": "womens-jewellery",
+      "category": "jewellery",
       "thumbnail": "https://i.dummyjson.com/data/products/76/thumbnail.jpg",
       "images": [
         "https://i.dummyjson.com/data/products/76/1.jpg",
@@ -1405,7 +1405,7 @@
       "rating": 4.21,
       "stock": 149,
       "brand": "Copenhagen Luxe",
-      "category": "womens-jewellery",
+      "category": "jewellery",
       "thumbnail": "https://i.dummyjson.com/data/products/77/thumbnail.jpg",
       "images": [
         "https://i.dummyjson.com/data/products/77/1.jpg",
@@ -1423,7 +1423,7 @@
       "rating": 4.69,
       "stock": 9,
       "brand": "Fashion Jewellery",
-      "category": "womens-jewellery",
+      "category": "jewellery",
       "thumbnail": "https://i.dummyjson.com/data/products/78/thumbnail.jpg",
       "images": ["https://i.dummyjson.com/data/products/78/thumbnail.jpg"]
     },
@@ -1436,7 +1436,7 @@
       "rating": 4.74,
       "stock": 16,
       "brand": "Fashion Jewellery",
-      "category": "womens-jewellery",
+      "category": "jewellery",
       "thumbnail": "https://i.dummyjson.com/data/products/79/thumbnail.jpg",
       "images": ["https://i.dummyjson.com/data/products/79/1.jpg"]
     },
@@ -1449,7 +1449,7 @@
       "rating": 4.59,
       "stock": 9,
       "brand": "Cuff Butterfly",
-      "category": "womens-jewellery",
+      "category": "jewellery",
       "thumbnail": "https://i.dummyjson.com/data/products/80/thumbnail.jpg",
       "images": [
         "https://i.dummyjson.com/data/products/80/1.jpg",
@@ -1831,185 +1831,5 @@
         "https://i.dummyjson.com/data/products/100/3.jpg",
         "https://i.dummyjson.com/data/products/100/thumbnail.jpg"
       ]
-    },
-        {
-          "id": 101,
-          "title": "iphone x",
-          "description": "The mobile is compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also supports HDR content means you can watch 4K content on it.",
-          "price": 6000000,
-          "discountPercentage": 0,
-          "rating": 0,
-          "stock": 0,
-          "brand": "apple",
-          "category": "mobile",
-          "thumbnail": "https://images.pexels.com/photos/1275229/pexels-photo-1275229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-          "images": [
-            "https://images.pexels.com/photos/1275229/pexels-photo-1275229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          ]
-        },
-        {
-          "id": 102,
-          "title": "samsung s20",
-          "description": "The mobile is compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also supports HDR content means you can watch 4K content on it.",
-          "price": 5000000,
-          "discountPercentage": 0,
-          "rating": 0,
-          "stock": 0,
-          "brand": "samsung",
-          "category": "mobile",
-          "thumbnail": "https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-          "images": [
-            "https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          ]
-        },
-        {
-          "id": 103,
-          "title": "Dell Series",
-          "description": "The Laptop is compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also supports HDR content means you can watch 4K content on it.",
-          "price": 600000,
-          "discountPercentage": 0,
-          "rating": 0,
-          "stock": 0,
-          "brand": "dell",
-          "category": "laptop",
-          "thumbnail": "https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-          "images": [
-            "https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          ]
-        },
-        {
-          "id": 104,
-          "title": "Nokia 420",
-          "description": "The mobile is compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also supports HDR content means you can watch 4K content on it.",
-          "price": 12599,
-          "discountPercentage": 0,
-          "rating": 0,
-          "stock": 0,
-          "brand": "nokia",
-          "category": "mobile",
-          "thumbnail": "https://images.pexels.com/photos/4224099/pexels-photo-4224099.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-          "images": [
-            "https://images.pexels.com/photos/4224099/pexels-photo-4224099.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          ]
-        },
-        {
-          "id": 105,
-          "title": "Mac Pc",
-          "description": "The Computer is compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also supports HDR content means you can watch 4K content on it.",
-          "price": 4000099,
-          "discountPercentage": 0,
-          "rating": 0,
-          "stock": 0,
-          "brand": "apple",
-          "category": "computer",
-          "thumbnail": "https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-          "images": [
-            "https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          ]
-        },
-        {
-          "id": 106,
-          "title": "Macbook Pro",
-          "description": "The Laptop is compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also supports HDR content means you can watch 4K content on it.",
-          "price": 42999,
-          "discountPercentage": 0,
-          "rating": 0,
-          "stock": 0,
-          "brand": "apple",
-          "category": "laptop",
-          "thumbnail": "https://images.pexels.com/photos/303383/pexels-photo-303383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-          "images": [
-            "https://images.pexels.com/photos/303383/pexels-photo-303383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          ]
-        },
-        {
-          "id": 107,
-          "title": "Asus gseries",
-          "description": "The laptop is compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also supports HDR content means you can watch 4K content on it.",
-          "price": 23999,
-          "discountPercentage": 0,
-          "rating": 0,
-          "stock": 0,
-          "brand": "asus",
-          "category": "laptop",
-          "thumbnail": "https://images.pexels.com/photos/261662/pexels-photo-261662.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-          "images": [
-            "https://images.pexels.com/photos/261662/pexels-photo-261662.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          ]
-        },
-        {
-          "id": 108,
-          "title": "Accessories",
-          "description": "The accessories are compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also supports HDR content means you can watch 4K content on it.",
-          "price": 1099999,
-          "discountPercentage": 0,
-          "rating": 0,
-          "stock": 0,
-          "brand": "lenova",
-          "category": "accessories",
-          "thumbnail": "https://images.pexels.com/photos/3178938/pexels-photo-3178938.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-          "images": [
-            "https://images.pexels.com/photos/3178938/pexels-photo-3178938.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          ]
-        },
-        {
-          "id": 109,
-          "title": "Iwatch",
-          "description": "This watch is compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also supports HDR content means you can watch 4K content on it.",
-          "price": 39999,
-          "discountPercentage": 0,
-          "rating": 0,
-          "stock": 0,
-          "brand": "apple",
-          "category": "watch",
-          "thumbnail": "https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-          "images": [
-            "https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          ]
-        },
-        {
-          "id": 110,
-          "title": "user need",
-          "description": "The mobile is compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also supports HDR content means you can watch 4K content on it.",
-          "price": 300099,
-          "discountPercentage": 0,
-          "rating": 0,
-          "stock": 0,
-          "brand": "apple",
-          "category": "accessories",
-          "thumbnail": "https://images.pexels.com/photos/1619651/pexels-photo-1619651.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-          "images": [
-            "https://images.pexels.com/photos/1619651/pexels-photo-1619651.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          ]
-        },
-        {
-          "id": 111,
-          "title": "rolex premium",
-          "description": "This watch is compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also supports HDR content means you can watch 4K content on it.",
-          "price": 999999,
-          "discountPercentage": 0,
-          "rating": 0,
-          "stock": 0,
-          "brand": "rolex",
-          "category": "watch",
-          "thumbnail": "https://images.pexels.com/photos/1697214/pexels-photo-1697214.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-          "images": [
-            "https://images.pexels.com/photos/1697214/pexels-photo-1697214.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          ]
-        },
-        {
-          "id": 112,
-          "title": "galaxy w20",
-          "description": "This watch is compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also supports HDR content means you can watch 4K content on it.",
-          "price": 311999,
-          "discountPercentage": 0,
-          "rating": 0,
-          "stock": 0,
-          "brand": "samsung",
-          "category": "watch",
-          "thumbnail": "https://images.pexels.com/photos/51011/pexels-photo-51011.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-          "images": [
-            "https://images.pexels.com/photos/51011/pexels-photo-51011.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          ]
-        }
+    }
   ]

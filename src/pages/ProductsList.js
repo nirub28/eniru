@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../actions/productActions';
 import styles from '../styles/products.module.css';
 
-const ProductsList = () => {
+const ProductsList = ({ selectedCategory }) => {
   const dispatch = useDispatch();
   const { products, loading, error } = useSelector((state) => state.products);
 
@@ -19,11 +19,14 @@ const ProductsList = () => {
     return <div>Error: {error}</div>;
   }
 
+  const filteredProducts = selectedCategory === 'all' ? products : products.filter(product => product.category === selectedCategory);
+
+
   return (
     <div className={styles.productListContainer}>
       <h2 className={styles.productListTitle}>Product List</h2>
       <ul className={styles.productList}>
-        {products.map((product) => (
+        {filteredProducts.map((product) => (
           <li key={product.id}>
             <div className={styles.productItem}>
             <div className={styles.productImageContainer}>

@@ -1,0 +1,32 @@
+.header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 24px;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .navList {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  
+    li {
+      a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        &.active {
+          border-bottom: 2px solid white;
+        }
+      }
+    }
+  }
+  
