@@ -7,6 +7,13 @@ import styles from '../styles/home.module.css';
 
 const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const images = [
+    'url_for_image1',
+    'url_for_image2',
+    'url_for_image3',
+    // Add more image URLs here
+  ];
 
   // Function to handle category selection
   const handleCategorySelect = (category) => {

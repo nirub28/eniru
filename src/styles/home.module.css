@@ -3,9 +3,9 @@
 /* Styles for the category grid container */
 .divCat {
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap to the next row */
-  gap: 70px 100px; /* Gap between columns (horizontal) and rows (vertical) */
-  justify-content: space-around; /* Distribute columns evenly */
+  flex-wrap: wrap; 
+  gap: 50px 50px;
+  justify-content: space-around;
 }
 
 .category {
@@ -13,7 +13,7 @@
   flex-direction: column;
   justify-content: flex-start; /* Align items at the top of the container */
   align-items: center;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   transition: transform 0.2s;
@@ -23,6 +23,7 @@
   border: 1px solid black;
   background-color: #fff;
   padding: 16px;
+  margin-left: 1px;
 }
 
 /* Style for the category text */
@@ -52,10 +53,10 @@
   background-image: url('https://m.media-amazon.com/images/I/51X28JCFppL._SX679_.jpg');
 }
 .groceries {
-  background-image: url('https://m.economictimes.com/thumb/height-450,width-600,imgsize-172382,msid-75668135/grocery-getty-f.jpg');
+  background-image: url('https://thumbs.dreamstime.com/z/supermarket-image-happy-couple-cart-full-products-choosing-apples-33658016.jpg');
 }
 .skincare {
-  background-image: url('https://images.everydayhealth.com/images/having-a-skin-care-routine-is-good-mental-health-alt-1440x810.jpg');
+  background-image: url('https://img.freepik.com/premium-photo/girl-with-natural-makeup_151428-3196.jpg');
 }
 .home-decoration {
   background-image: url('https://m.media-amazon.com/images/I/51AQgvlbjSL._SX300_SY300_QL70_FMwebp_.jpg');
@@ -91,5 +92,5 @@
   background-image: url('https://m.media-amazon.com/images/I/31TgRAeWSfL._SX300_SY300_QL70_FMwebp_.jpg');
 }
 .lighting {
-  background-image: url('https://m.media-amazon.com/images/I/41Bq9GNRmtL._SY445_SX342_QL70_FMwebp_.jpg');
+  background-image: url('https://img.staticmb.com/mbcontent/images/uploads/2022/11/Vertical-Hanging-Bamboo-Lights.png');
 }
