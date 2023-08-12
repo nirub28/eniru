@@ -2,10 +2,14 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../actions/productActions';
 import styles from '../styles/products.module.css';
+import { useParams } from 'react-router-dom';
 
-const ProductsList = ({ selectedCategory }) => {
+
+const ProductsList = () => {
   const dispatch = useDispatch();
   const { products, loading, error } = useSelector((state) => state.products);
+  const { category } = useParams();
+
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -19,8 +23,7 @@ const ProductsList = ({ selectedCategory }) => {
     return <div>Error: {error}</div>;
   }
 
-  const filteredProducts = selectedCategory === 'all' ? products : products.filter(product => product.category === selectedCategory);
-
+  const filteredProducts = category === 'all' ? products : products.filter(product => product.category === category);
 
   return (
     <div className={styles.productListContainer}>

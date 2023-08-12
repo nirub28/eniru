@@ -1,43 +1,62 @@
 import React, { useState } from 'react';
 import ProductsList from './ProductsList'; 
+import {Route, Routes , Link} from 'react-router-dom';
 import styles from '../styles/home.module.css';
 
 
+
 const Home = () => {
-  // State variable to track the selected category
-  const [selectedCategory, setSelectedCategory] = useState('all'); // Initialize with 'all' to show all products
+  const [selectedCategory, setSelectedCategory] = useState("");
 
   // Function to handle category selection
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);
   };
 
+  const CategoryItem = ({ to, category, imageClass }) => (
+    <Link to={to} onClick={() => handleCategorySelect(category)}>
+      <div className={`${styles.category} ${styles[imageClass]}`}>
+        <div className={styles.imageContainer}></div>
+        <div className={styles.categoryText}>{category}</div>
+      </div>
+    </Link>
+  );
+
   return (
+
+
     <div className="Home">
       <h2>Categories</h2>
-      <div>
-        <button onClick={() => handleCategorySelect('watch')}>Watches</button>
-        <button onClick={() => handleCategorySelect('smartphones')}>Smart Phones</button>
-        <button onClick={() => handleCategorySelect('laptops')}>Laptops</button>
-        <button onClick={() => handleCategorySelect('fragrances')}>Fragrances</button>
-        <button onClick={() => handleCategorySelect('skincare')}>Skincare</button>
-        <button onClick={() => handleCategorySelect('groceries')}>groceries</button>
-        <button onClick={() => handleCategorySelect('home-decoration')}>home-decoration</button>
-        <button onClick={() => handleCategorySelect('furniture')}>furniture</button>
-        <button onClick={() => handleCategorySelect('tops')}>tops</button>
-        <button onClick={() => handleCategorySelect('womens-dresses')}>womens-dresses</button>
-        <button onClick={() => handleCategorySelect('womens-shoes')}>womens-shoes</button>
-        <button onClick={() => handleCategorySelect('mens-shirts')}>mens-shirts</button>
-        <button onClick={() => handleCategorySelect('mens-shoes')}>mens-shoes</button>
-        <button onClick={() => handleCategorySelect('bags')}>bags</button>
-        <button onClick={() => handleCategorySelect('jewellery')}>jewellery</button>
-        <button onClick={() => handleCategorySelect('sunglasses')}>sunglasses</button>
-        <button onClick={() => handleCategorySelect('automotive')}>automotive</button>
-        <button onClick={() => handleCategorySelect('lighting')}>lighting</button>
+      <div className={styles.divCat}>
+
+      <CategoryItem to="/products/watch" category="Watches" imageClass="watch" />
+      <CategoryItem to="/products/smartphones" category="smartphones" imageClass="smartphones" />
+      <CategoryItem to="/products/fragrances" category="fragrances" imageClass="fragrances" />
+      <CategoryItem to="/products/laptops" category="laptops" imageClass="laptops" />
+      <CategoryItem to="/products/skincare" category="skincare" imageClass="skincare" />
+      <CategoryItem to="/products/groceries" category="groceries" imageClass="groceries" />
+      <CategoryItem to="/products/home-decoration" category="home-decoration" imageClass="home-decoration" />
+      <CategoryItem to="/products/furniture" category="furniture" imageClass="furniture" />
+      <CategoryItem to="/products/tops" category="tops" imageClass="tops" />
+      <CategoryItem to="/products/womens-dresses" category="womens-dresses" imageClass="womens-dresses" />
+      <CategoryItem to="/products/womens-shoes" category="womens-shoes" imageClass="womens-shoes" />
+      <CategoryItem to="/products/mens-shirts" category="mens-shirts" imageClass="mens-shirts" />
+      <CategoryItem to="/products/mens-shoes" category="mens-shoes" imageClass="mens-shoes" />
+      <CategoryItem to="/products/bags" category="bags" imageClass="bags" />
+      <CategoryItem to="/products/jewellery" category="jewellery" imageClass="jewellery" />
+      <CategoryItem to="/products/sunglasses" category="sunglasses" imageClass="sunglasses" />
+      <CategoryItem to="/products/automotive" category="automotive" imageClass="automotive" />
+      <CategoryItem to="/products/lighting" category="lighting" imageClass="lighting" />
+        
       </div>
-      {/* Pass the selected category to the ProductsList component */}
-      <ProductsList selectedCategory={selectedCategory} />
+      <Routes>
+        <Route
+          exact path="/products/:category"
+          element={<ProductsList selectedCategory={selectedCategory} />}
+        />
+      </Routes>
     </div>
+
   );
 };
 

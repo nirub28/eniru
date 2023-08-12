@@ -1,17 +1,95 @@
-/* styles/products.module.css */
+/* home.module.css */
 
-/* Button Styles */
-.button {
-    padding: 5px 10px;
-    margin-right: 5px;
-    background-color: #ddd;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  
-  .button.active {
-    background-color: #007bff;
-    color: white;
-  }
-  
+/* Styles for the category grid container */
+.divCat {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next row */
+  gap: 70px 100px; /* Gap between columns (horizontal) and rows (vertical) */
+  justify-content: space-around; /* Distribute columns evenly */
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align items at the top of the container */
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.2s;
+  height: 300px;
+  margin-bottom: 100px; 
+  width: 200px; 
+  border: 1px solid black;
+  background-color: #fff;
+  padding: 16px;
+}
+
+/* Style for the category text */
+.categoryText {
+  margin-top: 325px;
+  font-weight: bold;
+}
+
+
+.category:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* the background images for each category */
+.watch {
+  background-image: url('https://m.media-amazon.com/images/I/71IbtYa4G1S._UX569_.jpg');
+}
+.smartphones {
+  background-image: url('https://m.media-amazon.com/images/I/31F41kd-nBL._SX300_SY300_QL70_FMwebp_.jpg');
+}
+.laptops{
+  background-image: url('https://m.media-amazon.com/images/I/41o-KkXEkSL.jpg');
+}
+
+.fragrances {
+  background-image: url('https://m.media-amazon.com/images/I/51X28JCFppL._SX679_.jpg');
+}
+.groceries {
+  background-image: url('https://m.economictimes.com/thumb/height-450,width-600,imgsize-172382,msid-75668135/grocery-getty-f.jpg');
+}
+.skincare {
+  background-image: url('https://images.everydayhealth.com/images/having-a-skin-care-routine-is-good-mental-health-alt-1440x810.jpg');
+}
+.home-decoration {
+  background-image: url('https://m.media-amazon.com/images/I/51AQgvlbjSL._SX300_SY300_QL70_FMwebp_.jpg');
+}
+.furniture {
+  background-image: url('https://m.media-amazon.com/images/I/419IIIiaaqL._SX300_SY300_QL70_FMwebp_.jpg');
+}
+.tops {
+  background-image: url('https://m.media-amazon.com/images/I/51MuT7FfMeL._UX679_.jpg');
+}
+.womens-dresses {
+  background-image: url('https://m.media-amazon.com/images/I/61Y21MBMCFL._UY879_.jpg');
+}
+.womens-shoes {
+  background-image: url('https://m.media-amazon.com/images/I/71O5WLjPPmL._UY695_.jpg');
+}
+.mens-shirts {
+  background-image: url('https://m.media-amazon.com/images/I/61UwVGQZs2L._UY879_.jpg');
+}
+.mens-shoes {
+  background-image: url('https://m.media-amazon.com/images/I/713UmakQhoL._UY695_.jpg');
+}
+.bags {
+  background-image: url('https://m.media-amazon.com/images/I/81Xdo8YO4mS._UY695_.jpg');
+}
+.jewellery {
+  background-image: url('https://m.media-amazon.com/images/I/51UzQqoIR0L.jpg');
+}
+.sunglasses {
+  background-image: url('https://m.media-amazon.com/images/I/41Dr9I4x1EL._UX679_.jpg');
+}
+.automotive {
+  background-image: url('https://m.media-amazon.com/images/I/31TgRAeWSfL._SX300_SY300_QL70_FMwebp_.jpg');
+}
+.lighting {
+  background-image: url('https://m.media-amazon.com/images/I/41Bq9GNRmtL._SY445_SX342_QL70_FMwebp_.jpg');
+}

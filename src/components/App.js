@@ -1,6 +1,6 @@
 import React from 'react';
 import {Route, Routes } from 'react-router-dom';
-import { Home, ProductsList, NotFound } from '../pages';
+import { Home,ProductsList } from '../pages';
 import Header from './Header';
 import Footer from './Footer';
 
@@ -10,8 +10,8 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/products" element={<ProductsList />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/products/:category" element={<ProductsList />} />
+          {/* <Route path="*" element={<NotFound />} /> */}
         </Routes>
         <Footer />
       </div>
