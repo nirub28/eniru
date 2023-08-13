@@ -1,6 +1,3 @@
-/* home.module.css */
-
-/* Styles for the category grid container */
 .divCat {
   display: flex;
   flex-wrap: wrap; 
@@ -11,7 +8,7 @@
 .category {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Align items at the top of the container */
+  justify-content: flex-start;
   align-items: center;
   background-size: contain;
   background-position: center;
@@ -26,10 +23,11 @@
   margin-left: 1px;
 }
 
-/* Style for the category text */
 .categoryText {
   margin-top: 325px;
   font-weight: bold;
+  text-decoration: none;
+  color: black;
 }
 
 
@@ -40,10 +38,10 @@
 
 /* the background images for each category */
 .watch {
-  background-image: url('https://m.media-amazon.com/images/I/71IbtYa4G1S._UX569_.jpg');
+  background-image: url('https://m.media-amazon.com/images/I/418GgZVlz0L._SX300_SY300_QL70_FMwebp_.jpg');
 }
 .smartphones {
-  background-image: url('https://m.media-amazon.com/images/I/31F41kd-nBL._SX300_SY300_QL70_FMwebp_.jpg');
+  background-image: url('https://m.media-amazon.com/images/I/61uaJPLIdML._SX679_.jpg');
 }
 .laptops{
   background-image: url('https://m.media-amazon.com/images/I/41o-KkXEkSL.jpg');
@@ -53,13 +51,13 @@
   background-image: url('https://m.media-amazon.com/images/I/51X28JCFppL._SX679_.jpg');
 }
 .groceries {
-  background-image: url('https://thumbs.dreamstime.com/z/supermarket-image-happy-couple-cart-full-products-choosing-apples-33658016.jpg');
+  background-image: url('https://hips.hearstapps.com/hmg-prod/images/09dce7b7-ea40-406b-a2c0-a3f57c420b17-1657946362.jpeg?crop=0.660xw:1.00xh;0.0794xw,0&resize=1200:*');
 }
 .skincare {
-  background-image: url('https://img.freepik.com/premium-photo/girl-with-natural-makeup_151428-3196.jpg');
+  background-image: url('https://images.herzindagi.info/image/2020/May/milk-powder-face-packs-m.jpg');
 }
 .home-decoration {
-  background-image: url('https://m.media-amazon.com/images/I/51AQgvlbjSL._SX300_SY300_QL70_FMwebp_.jpg');
+  background-image: url('https://m.media-amazon.com/images/I/41LRqLT8LcL._SX300_SY300_QL70_FMwebp_.jpg');
 }
 .furniture {
   background-image: url('https://m.media-amazon.com/images/I/419IIIiaaqL._SX300_SY300_QL70_FMwebp_.jpg');
@@ -83,16 +81,16 @@
   background-image: url('https://m.media-amazon.com/images/I/81Xdo8YO4mS._UY695_.jpg');
 }
 .jewellery {
-  background-image: url('https://m.media-amazon.com/images/I/51UzQqoIR0L.jpg');
+  background-image: url('https://m.media-amazon.com/images/I/61NDs31j2YL._UY695_.jpg');
 }
 .sunglasses {
   background-image: url('https://m.media-amazon.com/images/I/41Dr9I4x1EL._UX679_.jpg');
 }
 .automotive {
-  background-image: url('https://m.media-amazon.com/images/I/31TgRAeWSfL._SX300_SY300_QL70_FMwebp_.jpg');
+  background-image: url('https://m.media-amazon.com/images/I/41iuZNDcYJL._SX300_SY300_QL70_FMwebp_.jpg');
 }
 .lighting {
-  background-image: url('https://img.staticmb.com/mbcontent/images/uploads/2022/11/Vertical-Hanging-Bamboo-Lights.png');
+  background-image: url('https://m.media-amazon.com/images/I/41M4QzK6NVL._SY445_SX342_QL70_FMwebp_.jpg');
 }
 
 .imageContainer{
@@ -112,8 +110,9 @@
   background-position: center;
   background-size: contain;
 }
-
-
 .spacediv{
   height: 30px;
+}
+.changeUnderline{
+  text-decoration: none;
 }

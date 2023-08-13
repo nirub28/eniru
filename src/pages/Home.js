@@ -19,7 +19,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-    // Rotate images every 3 seconds
+    // Rotate images every 4 seconds
     const timer = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 4000);
@@ -29,7 +29,7 @@ const Home = () => {
   }, [images.length]);
 
   const CategoryItem = ({ to, category, imageClass }) => (
-    <Link to={to} onClick={() => handleCategorySelect(category)}>
+    <Link className={styles.changeUnderline} to={to} onClick={() => handleCategorySelect(category)}>
       <div className={`${styles.category} ${styles[imageClass]}`}>
         <div className={styles.imageContainer}></div>
         <div className={styles.categoryText}>{category}</div>
@@ -58,79 +58,79 @@ const Home = () => {
         />
         <CategoryItem
           to="/products/smartphones"
-          category="smartphones"
+          category="Smartphones"
           imageClass="smartphones"
         />
         <CategoryItem
           to="/products/fragrances"
-          category="fragrances"
+          category="Fragrances"
           imageClass="fragrances"
         />
         <CategoryItem
           to="/products/laptops"
-          category="laptops"
+          category="Laptops"
           imageClass="laptops"
         />
         <CategoryItem
           to="/products/skincare"
-          category="skincare"
+          category="Skincare"
           imageClass="skincare"
         />
         <CategoryItem
           to="/products/groceries"
-          category="groceries"
+          category="Groceries"
           imageClass="groceries"
         />
         <CategoryItem
           to="/products/home-decoration"
-          category="home-decoration"
+          category="Home Decoration"
           imageClass="home-decoration"
         />
         <CategoryItem
           to="/products/furniture"
-          category="furniture"
+          category="Furniture"
           imageClass="furniture"
         />
-        <CategoryItem to="/products/tops" category="tops" imageClass="tops" />
+        <CategoryItem to="/products/tops" category="Tops" imageClass="tops" />
         <CategoryItem
           to="/products/womens-dresses"
-          category="womens-dresses"
+          category="Womens Dresses"
           imageClass="womens-dresses"
         />
         <CategoryItem
           to="/products/womens-shoes"
-          category="womens-shoes"
+          category="Womens Shoes"
           imageClass="womens-shoes"
         />
         <CategoryItem
           to="/products/mens-shirts"
-          category="mens-shirts"
+          category="Mens Shirts"
           imageClass="mens-shirts"
         />
         <CategoryItem
           to="/products/mens-shoes"
-          category="mens-shoes"
+          category="Mens Shoes"
           imageClass="mens-shoes"
         />
-        <CategoryItem to="/products/bags" category="bags" imageClass="bags" />
+        <CategoryItem to="/products/bags" category="Bags" imageClass="bags" />
         <CategoryItem
           to="/products/jewellery"
-          category="jewellery"
+          category="Jewellery"
           imageClass="jewellery"
         />
         <CategoryItem
           to="/products/sunglasses"
-          category="sunglasses"
+          category="Sunglasses"
           imageClass="sunglasses"
         />
         <CategoryItem
           to="/products/automotive"
-          category="automotive"
+          category="Automotive"
           imageClass="automotive"
         />
         <CategoryItem
           to="/products/lighting"
-          category="lighting"
+          category="Lighting"
           imageClass="lighting"
         />
       </div>

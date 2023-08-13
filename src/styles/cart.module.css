@@ -1,0 +1,134 @@
+/* cart.module.css */
+
+.cartContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .cartItems {
+    width: 70%;
+    padding-right: 50px;
+  }
+  
+  .cartItem {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    border: 1px solid #656464;
+    padding: 10px;
+    background-color: white;
+  }
+  
+  .carDet h3:hover{
+    cursor: pointer;
+  }
+  .cartItemImage {
+    width: 150px;
+    height: 150px;
+    margin-left: 30px;
+  }
+  
+  .cartItemDetails {
+    display: flex;
+    flex-direction: column;
+  }
+  .carDet{
+    margin-left: 40px;
+    width: 42%;
+  }
+  h3:hover{
+    color: blue;
+  }
+  
+  .removeButton {
+    margin-top: 10px;
+    background-color: #e53935;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+  }
+
+  .removeButton:hover{
+    cursor: pointer;
+    color: black;
+  }
+  .delcheck{
+    margin-top: 25px;
+    margin-right: 20px;
+  }
+  
+  .cartSummary {
+    width: 20%;
+    padding-left: 0px;
+    background-color: #f5f5f5;
+    padding: 10px;
+    /* text-align: left; */
+    margin-right: 50px;
+    margin-top: 65px;
+  }
+  .cartSummary h4{
+    color: #656464;
+  }
+  
+  .delcheck span:first-child {
+    color: green;
+  }
+  
+  .delcheck span:last-child {
+    color: #999;
+    text-decoration: line-through;
+  }
+
+.cartSummary {
+    width: 20%;
+    padding: 10px;
+    background-color: #f5f5f5;
+    margin-top: 65px;
+  }
+  
+  .cartSummary h4 {
+    color: #656464;
+  }
+  
+  .priceDetailRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8px 0;
+  }
+  
+  .priceLabel {
+    color: #333;
+    font-size: 14px;
+  }
+  
+  .delcheck {
+    font-size: 14px;
+    margin-right: -2px;
+    margin-bottom: 15px;
+  }
+  
+  .delcheck span:first-child {
+    color: green;
+  }
+  
+  .delcheck span:last-child {
+    color: #999;
+    text-decoration: line-through;
+  }
+  
+  .placeOrder{
+    width: 150px;
+    height: 30px;
+    background-color: green;
+    color: white;
+    margin-left: 50px;
+    margin-top: 50px;
+  }
+  .placeOrder:hover{
+    cursor: pointer;
+    color: black;
+  }

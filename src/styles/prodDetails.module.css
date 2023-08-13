@@ -1,0 +1,19 @@
+/* styles.module.css */
+.productDetailContainer {
+    display: flex;
+  }
+  
+  .imageContainer {
+    flex: 1;
+    /* Additional image container styles */
+  }
+  
+  .productDetailsContainer {
+    flex: 2;
+    margin-left: 20px;
+    /* Additional product details container styles */
+  }
+  
+  .smallImagesContainer {
+    margin-bottom: 150px; /* Add some margin at the bottom */
+  }  
