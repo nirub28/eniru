@@ -9,6 +9,10 @@ import {
 } from "../actions/productActions";
 import styles from "../styles/prodDetails.module.css";
 
+
+import { toast } from "react-toastify"; // to add notifications
+import "react-toastify/dist/ReactToastify.css";
+
 const ProductDetail = () => {
   const [selectedImage, setSelectedImage] = useState("");
   const { productId } = useParams();
@@ -57,6 +61,22 @@ const ProductDetail = () => {
   const beforeDiscount = Math.round(
     product.price + (product.discountPercentage / 100) * product.price
   );
+
+  
+  const handleAddCart = (id) => {
+    dispatch(addToCart(id));
+    toast.success("Added to Cart");
+  }  
+
+  const handleAddWish = (id) => {
+    dispatch(addToWishlist(id))
+        toast.success("Added to Wishlist");
+  }
+
+  const handleRemoveWish = (id) => {
+    dispatch(removeFromWishlist(id));
+        toast.success("Removed From Wishlist");
+  }
 
   return (
     <div className={styles.productDetailContainer}>
@@ -110,7 +130,7 @@ const ProductDetail = () => {
           {isItemInWishlist ? (
             <button
               type="button"
-              onClick={() => dispatch(removeFromWishlist(product.id))}
+              onClick={() => handleRemoveWish(product.id)}
               className={`${styles.actionButton} ${styles.removeFromWishlist}`}
             >
               Remove from Wishlist
@@ -118,7 +138,7 @@ const ProductDetail = () => {
           ) : (
             <button
               type="button"
-              onClick={() => dispatch(addToWishlist(product.id))}
+              onClick={() => handleAddWish(product.id)}
               className={`${styles.actionButton} ${styles.addToWishlist}`}
             >
               Add to Wishlist
@@ -135,7 +155,7 @@ const ProductDetail = () => {
           ) : (
             <button
               type="button"
-              onClick={() => dispatch(addToCart(product.id))}
+              onClick={() => handleAddCart(product.id)}
               className={`${styles.actionButton} ${styles.addToCartButton}`}
             >
               Add to Cart

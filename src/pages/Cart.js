@@ -4,6 +4,9 @@ import { fetchProducts, removeFromCart } from "../actions/productActions";
 import styles from "../styles/cart.module.css";
 import { Link } from "react-router-dom";
 
+import { toast } from "react-toastify"; // to add notifications
+import "react-toastify/dist/ReactToastify.css";
+
 const Cart = () => {
   const dispatch = useDispatch();
   const { products, cartItems } = useSelector((state) => ({
@@ -21,6 +24,7 @@ const Cart = () => {
   // Function to remove an item from the cart
   const handleRemoveFromCart = (productId) => {
     dispatch(removeFromCart(productId));
+    toast.success("Product deleted from cart");
   };
 
   // Function to get product details by ID
@@ -36,6 +40,10 @@ const Cart = () => {
 
   // Calculate TAX (5%)
   const tax = (totalPrice * 0.05).toFixed(2);
+
+ const testNoti =() =>{
+  toast.success("Comming Soon...!");
+  }
 
   if (cartItems.length === 0) {
     return (
@@ -123,7 +131,7 @@ const Cart = () => {
         </div>
         <hr />
         {totalPrice > 0 ? (
-          <button className={styles.placeOrder} type="submit">
+          <button className={styles.placeOrder} onClick={testNoti}>
             PLACE ORDER
           </button>
         ) : (

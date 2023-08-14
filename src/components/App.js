@@ -4,10 +4,28 @@ import { Home,ProductsList,ProductDetail,Cart, Wishlist } from '../pages';
 import Header from './Header';
 import Footer from './Footer';
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const App = () => {
 
   return (
       <div className="App">
+
+      <ToastContainer // for notifications
+        position="top-center"
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
+
+
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
