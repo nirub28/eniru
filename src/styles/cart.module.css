@@ -142,3 +142,33 @@
   .carprodName:hover{
     color:blue ;
   }
+
+ 
+.emptyWishlist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px auto;
+  max-width: 400px;
+  text-align: center;
+  margin-top: 100px;
+}
+.emptyDiv{
+  margin-top: 300px;
+}
+.homeLink {
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.homeButton {
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.homeButton:hover {
+  background-color: #1976D2;
+}

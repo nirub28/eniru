@@ -1,20 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import {Link, useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchProducts } from '../actions/productActions';
-import styles from '../styles/prodDetails.module.css'
+import React, { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  fetchProducts,
+  addToCart,
+  addToWishlist,
+  removeFromWishlist,
+} from "../actions/productActions";
+import styles from "../styles/prodDetails.module.css";
 
 const ProductDetail = () => {
-  const [selectedImage, setSelectedImage] = useState('');
+  const [selectedImage, setSelectedImage] = useState("");
   const { productId } = useParams();
   const dispatch = useDispatch();
   const { products, loading, error } = useSelector((state) => state.products);
-
-  // State to track wishlist and cart items
-  const [wishlist, setWishlist] = useState([]);
-  const [cart, setCart] = useState([]);
-
-
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  const wishlist = useSelector((state) => state.wishlist.wishlistItems);
 
   // Fetch products data if not already loaded
   useEffect(() => {
@@ -24,22 +25,18 @@ const ProductDetail = () => {
   }, [dispatch, products]);
 
   // Find the product using the converted productId
-  const product = products.find((product) => product.id === parseInt(productId));
+  const product = products.find(
+    (product) => product.id === parseInt(productId)
+  );
 
   useEffect(() => {
-    // Retrieve wishlist and cart items from local storage and set state
-    const storedWishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
-    setWishlist(storedWishlist);
-    setCart(storedCart);
-  }, []);
+    if (product && product.images.length > 0) {
+      setSelectedImage(product.images[0]);
+    }
+  }, [product]);
 
   if (!product) {
     return <div>Product not found</div>;
-  }
-
-  if (!selectedImage && product.images.length > 0) {
-    setSelectedImage(product.images[0]);
   }
 
   const handleImageClick = (image) => {
@@ -54,81 +51,97 @@ const ProductDetail = () => {
     return <div>Error: {error}</div>;
   }
 
-  const isItemInCart = cart.includes(product.id);
+  const isItemInCart = cartItems.includes(product.id);
+  const isItemInWishlist = wishlist.includes(product.id);
 
-
-  const addToWishlist = () => {
-    // Add the product to the wishlist array in local storage and update state
-    if (!wishlist.includes(product.id)) {
-      const updatedWishlist = [...wishlist, product.id];
-      localStorage.setItem('wishlist', JSON.stringify(updatedWishlist));
-      setWishlist(updatedWishlist);
-    }
-  };
-
-
-  const addToCart = () => {
-    // Add the product to the cart array in local storage and update state
-    if (!cart.includes(product.id)) {
-      const updatedCart = [...cart, product.id];
-      localStorage.setItem('cart', JSON.stringify(updatedCart));
-      setCart(updatedCart);
-    }
-  };
-
-  const removeFromWishlist = () => {
-    const updatedWishlist = wishlist.filter((id) => id !== product.id);
-    localStorage.setItem('wishlist', JSON.stringify(updatedWishlist));
-    setWishlist(updatedWishlist);
-  };
-
-
+  const beforeDiscount = Math.round(
+    product.price + (product.discountPercentage / 100) * product.price
+  );
 
   return (
     <div className={styles.productDetailContainer}>
-    <div className={styles.imageContainer}>
-      <img
-        src={selectedImage}
-        alt=""
-        style={{ width: '100%', maxHeight: '400px', objectFit: 'contain' }}
-      />
-      <div className={styles.smallImagesContainer}>
-        {product.images.map((image, index) => (
-          <img
-            key={index}
-            src={image}
-            alt=""
-            style={{ width: '60px', margin: '5px', cursor: 'pointer' }}
-            onClick={() => handleImageClick(image)}
-          />
-        ))}
+      <div className={styles.imageContainer}>
+        <img
+          src={selectedImage}
+          alt=""
+          style={{ width: "100%", maxHeight: "400px", objectFit: "contain" }}
+        />
+        <div className={styles.smallImagesContainer}>
+          {product.images.map((image, index) => (
+            <img
+              key={index}
+              src={image}
+              alt=""
+              style={{ width: "60px", margin: "5px", cursor: "pointer" }}
+              onClick={() => handleImageClick(image)}
+            />
+          ))}
+        </div>
       </div>
-    </div>
-    <div className={styles.productDetailsContainer}>
-      <h2>{product.title}</h2>
-      <p>{product.discountPercentage}</p>
-      <p>{product.description}</p>
-      <p>Price: ${product.price}</p>
-      <p>{product.brand}</p>
-      <p>{product.rating}</p>
-      {wishlist.includes(product.id) ? (
-        <button type="button" onClick={removeFromWishlist}>
-          Remove from Wishlist
-        </button>
-      ) : (
-        <button type="button" onClick={addToWishlist}>
-          Add to Wishlist
-        </button>
-      )}
-       {isItemInCart ? (
-         <Link to="/cart" className={styles.goToCartLink}>
-         <button className={styles.goToCartButton}>Go to Cart</button>
-        </Link>
-        ) : (
-          <button type="button" onClick={addToCart}>
-            Add to Cart
-          </button>
-        )}
+      <div className={styles.productDetailsContainer}>
+        <h2>{product.title}</h2>
+
+        <div>
+          Price: <span className={styles.pricebold}>${product.price}</span>
+          <span className={styles.pricediscount}> ${beforeDiscount} </span>
+          <span className={styles.pricedisval}>
+            {product.discountPercentage}%off
+          </span>
+        </div>
+
+        <p className={styles.productRating}>
+          {product.rating}{" "}
+          <img
+            className={styles.imgStar}
+            src="https://cdn-icons-png.flaticon.com/512/2107/2107957.png"
+            alt="start"
+          ></img>
+          <span className={styles.ratingCount}>172 ratings</span>
+        </p>
+        <p>
+          <b>Brand :</b> {product.brand}
+        </p>
+        <p>
+          {" "}
+          <b> About :</b> {product.description}
+        </p>
+
+        <div>
+          {isItemInWishlist ? (
+            <button
+              type="button"
+              onClick={() => dispatch(removeFromWishlist(product.id))}
+              className={`${styles.actionButton} ${styles.removeFromWishlist}`}
+            >
+              Remove from Wishlist
+            </button>
+          ) : (
+            <button
+              type="button"
+              onClick={() => dispatch(addToWishlist(product.id))}
+              className={`${styles.actionButton} ${styles.addToWishlist}`}
+            >
+              Add to Wishlist
+            </button>
+          )}
+          {isItemInCart ? (
+            <Link to="/cart" className={styles.goToCartLink}>
+              <button
+                className={`${styles.actionButton} ${styles.goToCartButton}`}
+              >
+                Go to Cart
+              </button>
+            </Link>
+          ) : (
+            <button
+              type="button"
+              onClick={() => dispatch(addToCart(product.id))}
+              className={`${styles.actionButton} ${styles.addToCartButton}`}
+            >
+              Add to Cart
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );

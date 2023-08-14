@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import ProductsList from "./ProductsList";
+import { useDispatch, useSelector } from "react-redux";
 import { Route, Routes, Link } from "react-router-dom";
 import styles from "../styles/home.module.css";
+import {selectCategory } from "../actions/productActions";
+import ProductsList from "./ProductsList";
 
 const Home = () => {
-
-  const [selectedCategory, setSelectedCategory] = useState("");
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const images = [
     '/imageoi.png',
@@ -13,9 +13,12 @@ const Home = () => {
     "/gro.jpg",
   ];
 
+  const dispatch = useDispatch();
+  const selectedCategory = useSelector((state) => state.products.selectedCategory);
+
   // Function to handle category selection
   const handleCategorySelect = (category) => {
-    setSelectedCategory(category);
+    dispatch(selectCategory(category));
   };
 
   useEffect(() => {
@@ -28,14 +31,16 @@ const Home = () => {
     return () => clearInterval(timer);
   }, [images.length]);
 
-  const CategoryItem = ({ to, category, imageClass }) => (
+  const CategoryItem = ({ to, category,name,imageClass }) => (
     <Link className={styles.changeUnderline} to={to} onClick={() => handleCategorySelect(category)}>
       <div className={`${styles.category} ${styles[imageClass]}`}>
         <div className={styles.imageContainer}></div>
-        <div className={styles.categoryText}>{category}</div>
+        <div className={styles.categoryText}>{name}</div>
       </div>
     </Link>
   );
+
+  
 
   return (
     <div className="Home">
@@ -53,85 +58,101 @@ const Home = () => {
       <div className={styles.divCat}>
         <CategoryItem
           to="/products/watch"
-          category="Watches"
+          category="watch"
           imageClass="watch"
+          name="Watches"
         />
         <CategoryItem
           to="/products/smartphones"
-          category="Smartphones"
+          category="smartphones"
           imageClass="smartphones"
+          name="Smartphones"
         />
         <CategoryItem
           to="/products/fragrances"
-          category="Fragrances"
+          category="fragrances"
           imageClass="fragrances"
+          name="Fragrances"
         />
         <CategoryItem
           to="/products/laptops"
-          category="Laptops"
+          category="laptops"
           imageClass="laptops"
+          name="Laptops"
         />
         <CategoryItem
           to="/products/skincare"
-          category="Skincare"
+          category="skincare"
           imageClass="skincare"
+          name="Skincare"
         />
         <CategoryItem
           to="/products/groceries"
-          category="Groceries"
+          category="groceries"
           imageClass="groceries"
+          name="Groceries"
         />
         <CategoryItem
           to="/products/home-decoration"
-          category="Home Decoration"
+          category="home-decoration"
           imageClass="home-decoration"
+          name="Home Decoration"
         />
         <CategoryItem
           to="/products/furniture"
-          category="Furniture"
+          category="furniture"
           imageClass="furniture"
+          name="Furniture"
         />
-        <CategoryItem to="/products/tops" category="Tops" imageClass="tops" />
+        <CategoryItem to="/products/tops" category="tops" imageClass="tops"  name="Tops"/>
         <CategoryItem
           to="/products/womens-dresses"
-          category="Womens Dresses"
+          category="womens-dresses"
           imageClass="womens-dresses"
+          name="Women Dresses"
         />
         <CategoryItem
           to="/products/womens-shoes"
-          category="Womens Shoes"
+          category="womens-shoes"
           imageClass="womens-shoes"
+          name="Women Shoes"
         />
         <CategoryItem
           to="/products/mens-shirts"
-          category="Mens Shirts"
+          category="mens-shirts"
           imageClass="mens-shirts"
+          name="Men Shirts"
         />
         <CategoryItem
           to="/products/mens-shoes"
-          category="Mens Shoes"
+          category="mens-shoes"
           imageClass="mens-shoes"
+          name="Men Shoes"
         />
-        <CategoryItem to="/products/bags" category="Bags" imageClass="bags" />
+        <CategoryItem to="/products/bags" category="bags" imageClass="bags" name="Bags"/>
         <CategoryItem
           to="/products/jewellery"
-          category="Jewellery"
+          category="jewellery"
           imageClass="jewellery"
+          name="Jewellery"
         />
         <CategoryItem
           to="/products/sunglasses"
-          category="Sunglasses"
+          category="sunglasses"
           imageClass="sunglasses"
+          name="Sunglasses"
         />
         <CategoryItem
           to="/products/automotive"
-          category="Automotive"
+          category="automotive"
           imageClass="automotive"
+          name="Automotive"
         />
         <CategoryItem
           to="/products/lighting"
-          category="Lighting"
+          category="lighting"
           imageClass="lighting"
+          name="Lighting"
         />
       </div>
       <Routes>

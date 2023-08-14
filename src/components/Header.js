@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import styles from '../styles/header.module.css';
 
 const Header = () => {
-  const [cartCount, setCartCount] = useState(0);
+  // Get the cart items from the Redux store
+  const cartItems = useSelector((state) => state.cart.cartItems);
 
-  // Fetch the cart items from local storage and update the cart count
-  useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
-    setCartCount(storedCart.length);
-  }, []);
+  // Calculate the cart count
+  const cartCount = cartItems.length;
 
   return (
     <div className={styles.nav}>
@@ -19,7 +18,7 @@ const Header = () => {
           </a>
         </span>
         <span className={styles.wishlist}>
-          <a className={styles.wishListLink} href="/whishlist">
+          <a className={styles.wishListLink} href="/wishlist">
             Wishlist
             <img
               className={styles.whishlistIcon}

@@ -1,32 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProducts } from "../actions/productActions";
+import { fetchProducts, removeFromCart } from "../actions/productActions";
 import styles from "../styles/cart.module.css";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
-  const [cartItems, setCartItems] = useState([]);
-  const { products } = useSelector((state) => state.products);
   const dispatch = useDispatch();
+  const { products, cartItems } = useSelector((state) => ({
+    products: state.products.products,
+    cartItems: state.cart.cartItems,
+  }));
 
   // Fetch products data if not already loaded
   useEffect(() => {
-    if (!products) {
+    if (!products || products.length === 0) {
       dispatch(fetchProducts());
     }
   }, [dispatch, products]);
 
-  // Fetch cart items from local storage and set cartItems state
-  useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
-    setCartItems(storedCart);
-  }, []);
-
   // Function to remove an item from the cart
-  const removeFromCart = (productId) => {
-    const updatedCart = cartItems.filter((id) => id !== productId);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
-    setCartItems(updatedCart);
+  const handleRemoveFromCart = (productId) => {
+    dispatch(removeFromCart(productId));
   };
 
   // Function to get product details by ID
@@ -34,20 +28,26 @@ const Cart = () => {
     return products.find((product) => product.id === productId);
   };
 
-  // Helper function to get product price by ID
-  const getProductPrice = (productId) => {
-    const product = getProductById(productId);
-    return product ? parseFloat(product.price) : 0;
-  };
-
   // Calculate total price
   const totalPrice = cartItems.reduce(
-    (total, item) => total + getProductPrice(item),
+    (total, productId) => total + getProductById(productId).price,
     0
   );
 
-  // Calculate TAX (8%)
+  // Calculate TAX (5%)
   const tax = (totalPrice * 0.05).toFixed(2);
+
+  if (cartItems.length === 0) {
+    return (
+      <div className={styles.emptyWishlist}>
+        <p>Your Cart Is Empty!</p>
+        <Link to="/" className={styles.homeLink}>
+          <button className={styles.homeButton}>Shop Now</button>
+        </Link>
+        <div className={styles.emptyDiv}></div>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.cartContainer}>
@@ -59,7 +59,11 @@ const Cart = () => {
           cartItems.map((productId) => {
             const product = getProductById(productId);
             if (!product) {
-              return null; // Product not found, handle accordingly
+              return (
+                <div key={productId} className={styles.cartItem}>
+                  <p>Product not found.</p>
+                </div>
+              );
             }
             return (
               <div key={product.id} className={styles.cartItem}>
@@ -79,7 +83,7 @@ const Cart = () => {
                   </h3>
                   <p>Price: ${product.price}</p>
                   <button
-                    onClick={() => removeFromCart(product.id)}
+                    onClick={() => handleRemoveFromCart(product.id)}
                     className={styles.removeButton}
                   >
                     Remove from Cart

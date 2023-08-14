@@ -3,6 +3,7 @@ const initialState = {
     products: [],
     loading: true,
     error: null,
+    selectedCategory: "",
   };
   
   const productReducer = (state = initialState, action) => {
@@ -20,6 +21,12 @@ const initialState = {
           loading: false,
           error: action.payload,
         };
+        case "SELECT_CATEGORY":
+      return {
+        ...state,
+        selectedCategory: action.payload,
+      };
+
       default:
         return state;
     }

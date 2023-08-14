@@ -1,0 +1,80 @@
+/* wishlist.module.css */
+.wishlistContainer {
+    margin: 20px;
+  }
+  
+  .wishlistItems {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .wishlistItem {
+    border: 1px solid #7d7878;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background-color: rgb(143, 141, 141);
+  }
+  
+  .wishlistItemImage {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-right: 10px;
+  }
+  
+  .wishlistItemDetails {
+    flex-grow: 1;
+  }
+  
+  .removeButton {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .removeButton:hover {
+    background-color: #d32f2f;
+  }
+
+  /* wishlist.module.css */
+
+.emptyWishlist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px auto;
+  max-width: 400px;
+  text-align: center;
+  margin-top: 100px;
+}
+.emptyDiv{
+  margin-top: 300px;
+}
+.homeLink {
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.homeButton {
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.homeButton:hover {
+  background-color: #1976D2;
+}
+
+ .carprodName{
+  color: black;
+  text-decoration: none;
+ } 
+ .carprodName:hover{
+  color: blue;
+ }

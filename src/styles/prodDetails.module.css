@@ -1,6 +1,9 @@
 /* styles.module.css */
 .productDetailContainer {
     display: flex;
+    margin-top: 20px;
+    margin-left: 40px;
+    background-color: white;
   }
   
   .imageContainer {
@@ -17,3 +20,96 @@
   .smallImagesContainer {
     margin-bottom: 150px; /* Add some margin at the bottom */
   }  
+
+  .productRating {
+    font-size: 14px;
+    color: white;
+    padding: 3px;
+    width:41px;
+    height: 16px;
+    background-color: green;
+    border-radius: 5px;
+    position: relative; 
+  display: inline-block;
+  }
+
+  
+.ratingCount {
+  font-size: 14px; 
+  color: black; 
+  margin-left: 10px;
+  position: absolute;
+  top: 50%; 
+  transform: translateY(-50%);
+  left: 100%; 
+  width: 100px;
+}
+
+  .imgStar {
+    width: 11px;
+    height: 11px;
+    position: relative;
+  }
+  
+  .imgStar::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.7; 
+  }
+  .pricebold{
+    font-weight: bold;
+  }
+  .pricediscount{
+     text-decoration: line-through;
+     margin-left: 15px;
+  }
+  .pricedisval{
+     color: green;
+     margin-left: 5px;
+  }
+
+
+
+/* Shared styles for action buttons */
+.actionButton {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Styles for "Add to Wishlist" button */
+.addToWishlist {
+  background-color: #e2ac17;
+  color: white;
+  width:175px;
+}
+
+/* Styles for "Remove from Wishlist" button */
+.removeFromWishlist {
+  background-color: #ff6961;
+  color: white;
+}
+
+/* Styles for "Add to Cart" button */
+.addToCartButton {
+  background-color: #4cb4da;
+  color: white;
+}
+
+/* Styles for "Go to Cart" button */
+.goToCartButton {
+  background-color: #4caf50;
+  color: white;
+}
+
+button:hover{
+  cursor: pointer;
+  color: black;
+}
