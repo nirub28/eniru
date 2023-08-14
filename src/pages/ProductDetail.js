@@ -66,6 +66,7 @@ const ProductDetail = () => {
     }
   };
 
+
   const addToCart = () => {
     // Add the product to the cart array in local storage and update state
     if (!cart.includes(product.id)) {

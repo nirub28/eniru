@@ -1,8 +1,15 @@
-import React from 'react';
-// import { Link, NavLink } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import styles from '../styles/header.module.css';
 
 const Header = () => {
+  const [cartCount, setCartCount] = useState(0);
+
+  // Fetch the cart items from local storage and update the cart count
+  useEffect(() => {
+    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    setCartCount(storedCart.length);
+  }, []);
+
   return (
     <div className={styles.nav}>
       <div className={styles.nameContainer}>
@@ -11,21 +18,14 @@ const Header = () => {
             eNiru
           </a>
         </span>
-        <span className={styles.prodList}>
-          <a className={styles.prodLink} href="/Products">
-            Products
-          </a>
-        </span>
-        <span className={styles.addProd}>
-          {" "}
-          <a className={styles.prodLink} href="/add">
-            {" "}
-            Add a product{" "}
+        <span className={styles.wishlist}>
+          <a className={styles.wishListLink} href="/whishlist">
+            Wishlist
             <img
-              className={styles.addIcon}
-              src="https://cdn-icons-png.flaticon.com/256/4315/4315609.png"
+              className={styles.whishlistIcon}
+              src="https://cdn-icons-png.flaticon.com/512/7245/7245139.png"
               alt="add-pic"
-            />{" "}
+            />
           </a>
         </span>
       </div>
@@ -33,14 +33,15 @@ const Header = () => {
         <a href="/cart">
           <img
             className={styles.cart}
-            src="https://cdn-icons-png.flaticon.com/512/3737/3737372.png"
+            src="https://cdn-icons-png.flaticon.com/512/3737/3737173.png"
             alt="cart-icon"
           />
         </a>{" "}
-        <sup className={styles.cartCount}>{"len"}</sup>
+        {/* Display the cart count */}
+        <sup className={styles.cartCount}>{cartCount}</sup>
       </div>
       <div className={styles.userContainer}>
-        <span className={styles.name}>Niranjan</span>
+        <span className={styles.name}>YOU</span>
         <img
           className={styles.profilePic}
           src="https://cdn2.iconfinder.com/data/icons/business-man-8/512/7-1024.png"

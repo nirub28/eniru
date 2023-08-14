@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchProducts } from '../actions/productActions';
-import styles from '../styles/cart.module.css';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProducts } from "../actions/productActions";
+import styles from "../styles/cart.module.css";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -18,14 +18,14 @@ const Cart = () => {
 
   // Fetch cart items from local storage and set cartItems state
   useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
     setCartItems(storedCart);
   }, []);
 
   // Function to remove an item from the cart
   const removeFromCart = (productId) => {
     const updatedCart = cartItems.filter((id) => id !== productId);
-    localStorage.setItem('cart', JSON.stringify(updatedCart));
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
     setCartItems(updatedCart);
   };
 
@@ -34,11 +34,20 @@ const Cart = () => {
     return products.find((product) => product.id === productId);
   };
 
-  // Calculate total price
-  const totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
+  // Helper function to get product price by ID
+  const getProductPrice = (productId) => {
+    const product = getProductById(productId);
+    return product ? parseFloat(product.price) : 0;
+  };
 
-  // Calculate GST (8%)
-  const gst = (totalPrice * 0.08).toFixed(2);
+  // Calculate total price
+  const totalPrice = cartItems.reduce(
+    (total, item) => total + getProductPrice(item),
+    0
+  );
+
+  // Calculate TAX (8%)
+  const tax = (totalPrice * 0.05).toFixed(2);
 
   return (
     <div className={styles.cartContainer}>
@@ -50,7 +59,7 @@ const Cart = () => {
           cartItems.map((productId) => {
             const product = getProductById(productId);
             if (!product) {
-              return null; 
+              return null; // Product not found, handle accordingly
             }
             return (
               <div key={product.id} className={styles.cartItem}>
@@ -61,50 +70,62 @@ const Cart = () => {
                 />
                 <div className={styles.carDet}>
                   <h3>
-                    <Link to={`/products/details/${product.id}`}>
+                    <Link
+                      className={styles.carprodName}
+                      to={`/products/details/${product.id}`}
+                    >
                       {product.title}
                     </Link>
                   </h3>
-                <p>Price: ${product.price}</p>
-                <button
-                  onClick={() => removeFromCart(product.id)}
-                  className={styles.removeButton}
-                >
-                  Remove from Cart
-                </button>
+                  <p>Price: ${product.price}</p>
+                  <button
+                    onClick={() => removeFromCart(product.id)}
+                    className={styles.removeButton}
+                  >
+                    Remove from Cart
+                  </button>
                 </div>
-                <div className={styles.delcheck}>Delivery by Tomorrow | <span>Free</span> <span>₹40</span></div>
+                <div className={styles.delcheck}>
+                  Delivery by Tomorrow | <span>Free</span> <span>$10</span>
+                </div>
               </div>
             );
           })
         )}
       </div>
       <div className={styles.cartSummary}>
-  <h4>PRICE DETAILS</h4>
-  <hr />
-  <div className={styles.priceDetailRow}>
-    <div className={styles.priceLabel}>Price ({cartItems.length} items)</div>
-    <div>${totalPrice}</div>
-  </div>
-  <div className={styles.priceDetailRow}>
-    <div className={styles.priceLabel}>Tax (8%)</div>
-    <div>${gst}</div>
-  </div>
-  <div className={styles.priceDetailRow}>
-    <div className={styles.priceLabel}>Delivery Fee</div>
-    <div className={styles.delcheck}>
-      <span>Free</span> <span>₹40</span>
-    </div>
-  </div>
-  <hr/>
-  <div className={styles.priceDetailRow}>
-    <div className={styles.priceLabel}>Total Amount</div>
-    <div>${(totalPrice + parseFloat(gst)).toFixed(2)}</div>
-  </div>
-  <hr/>
-  <button className={styles.placeOrder} type='submit'>PLACE ORDER</button>
-</div>
-
+        <h4>PRICE DETAILS</h4>
+        <hr />
+        <div className={styles.priceDetailRow}>
+          <div className={styles.priceLabel}>
+            Price ({cartItems.length} items)
+          </div>
+          <div>${totalPrice}</div>
+        </div>
+        <div className={styles.priceDetailRow}>
+          <div className={styles.priceLabel}>Tax (5%)</div>
+          <div>${tax}</div>
+        </div>
+        <div className={styles.priceDetailRow}>
+          <div className={styles.priceLabel}>Delivery Fee</div>
+          <div className={styles.delcheck}>
+            <span>Free</span> <span>$10</span>
+          </div>
+        </div>
+        <hr />
+        <div className={styles.priceDetailRow}>
+          <div className={styles.priceLabel}>Total Amount</div>
+          <div>${(totalPrice + parseFloat(tax)).toFixed(2)}</div>
+        </div>
+        <hr />
+        {totalPrice > 0 ? (
+          <button className={styles.placeOrder} type="submit">
+            PLACE ORDER
+          </button>
+        ) : (
+          <p></p>
+        )}
+      </div>
     </div>
   );
 };

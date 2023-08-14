@@ -30,39 +30,43 @@ body {
   color: white;
 }
 .appName {
-  margin-left: 15px;
+  margin-left: 50px;
   font-style: bold;
+  font-size: 1.8rem;
   color: aqua;
+  font-style: italic;
 }
-.prodList {
-  margin-left: 20px;
+.wishlist {
+  margin-left: 50px;
 }
-.prodList:hover {
+.wishlist:hover {
   cursor: pointer;
 }
-.addProd {
-  margin-left: 20px;
-  position: relative;
-}
-.addProd:hover {
-  cursor: pointer;
-}
-.addIcon {
+
+.whishlistIcon {
   height: 20px;
   width: 20px;
   position: absolute;
   margin-left: 6px;
-  margin-top: 2px;
+  margin-top:10px;
 }
+
+.wishListLink{
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+} 
+
+.wishListLink:hover{
+  color: blanchedalmond;
+}
+
 .name {
   margin-right: 10px;
   color: white;
   font-weight: bold;
 }
-.prodLink {
-  text-decoration: none;
-  color: white;
-}
+
 .appLink {
   text-decoration: none;
   color: aqua;
@@ -83,8 +87,8 @@ body {
   color: white;
   padding: 4px 8px;
   border-radius: 50%;
-  margin-top: -9px;
-  margin-left: -7px;
+  margin-top: -6px;
+  margin-left: -10px;
 }
 .cart:hover {
   cursor: pointer;
