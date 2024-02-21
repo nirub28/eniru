@@ -10,7 +10,7 @@ const ProductsList = () => {
   const { products, loading, error, selectedCategory } = useSelector((state) => state.products);
   const { category } = useParams();
 
-  // console.log("products is", products);
+  // console.log("products is", products);//
 
 
   useEffect(() => {
