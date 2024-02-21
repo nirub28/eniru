@@ -15,6 +15,7 @@ export const SELECT_CATEGORY = "SELECT_CATEGORY";
 export const fetchProducts = () => async (dispatch) => {
   try {
     const response = await axios.get('/products.json');
+    console.log("checking in reducer", response.data );
     const products = response.data;
     dispatch({
       type: FETCH_PRODUCTS_SUCCESS,

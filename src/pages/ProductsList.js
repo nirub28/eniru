@@ -10,10 +10,13 @@ const ProductsList = () => {
   const { products, loading, error, selectedCategory } = useSelector((state) => state.products);
   const { category } = useParams();
 
+  // console.log("products is", products);
+
 
   useEffect(() => {
     // Fetch products data if not already loaded or if the selected category changes
-    if (!products || selectedCategory !== category) {
+    if (products.length === 0 || selectedCategory !== category) {
+      console.log("dispatching");
       dispatch(fetchProducts(category));
     }
   }, [dispatch, products, category, selectedCategory]);
